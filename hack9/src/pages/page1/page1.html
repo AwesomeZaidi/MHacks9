@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Innovare Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+ <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user.coverImage +')'}"></div>
+  <div id="content">
+    <div id="profile-info" padding>
+      <img id="profile-image" [src]="user.profileImage">
+      <h3 id="profile-name">{{user.name}}</h3>
+      <p>{{user.occupation}} &bull; {{user.location}}</p>
+      <p class="profile-description">{{user.description}}</p>
+      <button ion-button *ngIf="!following" small color="purple" (click)="follow()">Follow</button>
+      <button ion-button *ngIf="following" class="follow-button" small color="purple" (click)="follow()">Following<ion-icon name="checkmark"></ion-icon></button>
+      <button ion-button small color="red">Settings</button>
+    </div>
+
+    
+  </div>
+  </ion-content>
